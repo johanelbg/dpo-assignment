@@ -68,7 +68,17 @@ app.get("/nonpaid", async function (req: Request, res: Response) {
 
 // simulate a payment to the first order
 app.post("/pay", async function (req: Request, res: Response) {
-    const orderId = "39b03c83-6e13-40f1-a185-3561b6a8e6c3"
+    const { orderId } = req.body
+
+    const order = await AppDataSource.getRepository(Orders)
+        .createQueryBuilder("orders")
+        .leftJoinAndSelect("orders.orderPayments", "orderPayments")
+        .where("orders.id = :id", { id: orderId })
+        .getOne()
+
+    if (order.orderPayments?.some(p => p.status === 1)) {
+        return res.send('Already paid')
+    }
 
     const msg = {
         action: 'PAYMENT',

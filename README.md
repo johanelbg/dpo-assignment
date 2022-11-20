@@ -14,7 +14,7 @@ Regarding the first task, I made the follozing assumptions:
 
 
 Regarding the task 2:
--the first order will be updated to simulate the payment
+-pass an id in body to update the payement info
 -consumer and producer are on the same server (for dev purpose)
 
 # Welcome to DPO Paygate, Build with TypeORM
