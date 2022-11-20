@@ -15,9 +15,6 @@ export class Orders {
     @Column()
     descText: string;
 
-    // @Column()
-    // status: string;
-
     @Column()
     dateCreated: string;
 

@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm"
 import { OrderItems } from "./entity/OrderItems"
 import { OrderPayments } from "./entity/OrderPayments"
-import {Orders} from './entity/Orders'
+import { Orders } from './entity/Orders'
 import { Product } from "./entity/Product"
 
 export const AppDataSource = new DataSource({

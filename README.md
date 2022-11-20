@@ -1,3 +1,22 @@
+# Solutions:
+
+Steps to run this project:
+
+1. Run a mySQL db, you can check credentials in src/app-data-source.ts
+2. Run a rabbitMQ server on default port
+3. Run `npm i` command
+4. Run `npm start` command
+
+
+Regarding the first task, I made the follozing assumptions:
+-paid orders are the one without declined order (status 0) and with payed order (status 1)
+-non paid have no payments record or only declined payment (status 0)
+
+
+Regarding the task 2:
+-the first order will be updated to simulate the payment
+-consumer and producer are on the same server (for dev purpose)
+
 # Welcome to DPO Paygate, Build with TypeORM
 
 Steps to run this project:
